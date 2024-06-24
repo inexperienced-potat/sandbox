@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://340l33qyh1xf"]
+
+[ext_resource type="PackedScene" uid="uid://hc6d1t4mcgp7" path="res://map/map.tscn" id="1_s8mis"]
+[ext_resource type="PackedScene" uid="uid://dn3oo5syhncnd" path="res://player/player.tscn" id="2_nqk87"]
+
+[node name="Game" type="Node"]
+
+[node name="Map" parent="." instance=ExtResource("1_s8mis")]
+position = Vector2(-128, -128)
+
+[node name="Player" parent="." instance=ExtResource("2_nqk87")]
+scale = Vector2(0.1, 0.1)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.3, 0.3)
+
+[connection signal="changed_chunk" from="Player" to="Map" method="_on_player_changed_chunk"]

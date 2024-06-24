@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://hc6d1t4mcgp7"]
+
+[ext_resource type="Texture2D" uid="uid://04ju1cny55f7" path="res://map/test_tile.png" id="1_qabwe"]
+[ext_resource type="Script" path="res://map/world_gen.gd" id="2_rf2u0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7lw8h"]
+texture = ExtResource("1_qabwe")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_kmgpr"]
+sources/0 = SubResource("TileSetAtlasSource_7lw8h")
+
+[node name="Map" type="TileMap"]
+tile_set = SubResource("TileSet_kmgpr")
+rendering_quadrant_size = 1
+format = 2
+script = ExtResource("2_rf2u0")
